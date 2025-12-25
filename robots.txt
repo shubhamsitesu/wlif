@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap location for Google and other search engines
+Sitemap: https://weltinfo.com/sitemap.xml
