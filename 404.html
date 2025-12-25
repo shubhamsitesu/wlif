@@ -1,1 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr-DZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 404 Specific SEO & Meta -->
+    <title>404 - Page Non Trouvée | WeltInfo</title>
+    <meta name="robots" content="noindex, follow"> 
+    <meta name="description" content="La page que vous cherchez n'existe plus ou a été déplacée. Retournez à l'accueil de WeltInfo pour voir nos composants PC.">
 
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- DESIGN SYSTEM (Matches WeltInfo Theme) --- */
+        :root {
+            --brand-color: #2563eb;
+            --brand-dark: #1e3a8a;
+            --brand-accent: #f59e0b;
+            --bg-body: #f8fafc;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+
+
+        .error-container {
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+        }
+
+        /* Animated 404 Text */
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            line-height: 1;
+            color: var(--brand-color);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            letter-spacing: -5px;
+        }
+
+        /* Glitch Effect for Tech Feel */
+        .error-code::before, .error-code::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-body);
+        }
+        
+        .error-code::before {
+            left: 2px;
+            text-shadow: -1px 0 #ff00c1;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+
+        .error-code::after {
+            left: -2px;
+            text-shadow: -1px 0 #00fff9;
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(10px, 9999px, 30px, 0); }
+            20% { clip: rect(80px, 9999px, 100px, 0); }
+            40% { clip: rect(40px, 9999px, 60px, 0); }
+            60% { clip: rect(20px, 9999px, 90px, 0); }
+            80% { clip: rect(60px, 9999px, 10px, 0); }
+            100% { clip: rect(10px, 9999px, 30px, 0); }
+        }
+        
+        @keyframes glitch-anim2 {
+            0% { clip: rect(60px, 9999px, 10px, 0); }
+            20% { clip: rect(10px, 9999px, 50px, 0); }
+            40% { clip: rect(80px, 9999px, 20px, 0); }
+            60% { clip: rect(30px, 9999px, 70px, 0); }
+            80% { clip: rect(50px, 9999px, 90px, 0); }
+            100% { clip: rect(10px, 9999px, 60px, 0); }
+        }
+
+        .error-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            color: var(--brand-dark);
+        }
+
+        .error-desc {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background: var(--brand-color);
+            color: white;
+            padding: 1rem 3rem;
+            border-radius: 100px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39);
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background: var(--brand-dark);
+        }
+
+        .btn-link {
+            color: var(--text-muted);
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .btn-link:hover {
+            color: var(--brand-color);
+        }
+
+        .tech-decoration {
+            margin-top: 3rem;
+            color: #cbd5e1;
+            font-size: 4rem;
+            opacity: 0.2;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="error-container">
+        <!-- Glitch 404 Effect -->
+        <div class="error-code" data-text="404">404</div>
+        
+        <h1 class="error-title">Oups ! Composant Manquant</h1>
+        
+        <p class="error-desc">
+            La page que vous recherchez n'existe plus ou a été déplacée. <br>
+            Vérifiez l'URL ou retournez au catalogue WeltInfo.
+        </p>
+        
+        <div class="actions">
+            <!-- Button to go Home -->
+            <a href="/" class="btn-primary">Retour à l'Accueil</a>
+            
+            <!-- Link to Support -->
+            <a href="#" class="btn-link">Contacter le Support Technique</a>
+        </div>
+
+        <!-- Decoration Icon (Chip/PC part related) -->
+        <i class="fas fa-microchip tech-decoration"></i>
+    </div>
+
+</body>
+</html>
