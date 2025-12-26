@@ -311,84 +311,103 @@
         html, body { overflow-x: hidden; }
     </style>
 
-    <!-- ADVANCED JSON-LD SCHEMA -->
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "Organization",
+      "@id": "https://weltinfo.com/#organization",
+      "name": "WeltInfo",
+      "legalName": "WeltInfo E-Commerce",
+      "url": "https://weltinfo.com",
+      "logo": "https://weltinfo.com/logo.png",
+      "description": "WeltInfo est le site officiel de vente de matériel informatique en Algérie. Spécialiste en composants PC, GPU et Gaming.",
+      "sameAs": [
+        "https://www.facebook.com/weltinfo",
+        "https://www.instagram.com/weltinfo",
+        "https://www.youtube.com/@weltinfo"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sidi Yahia, Hydra",
+        "addressLocality": "Alger",
+        "addressRegion": "Alger",
+        "postalCode": "16035",
+        "addressCountry": "DZ"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+213-550-000-000",
+        "contactType": "customer service",
+        "areaServed": "DZ",
+        "availableLanguage": ["French", "Arabic"]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://weltinfo.com/#website",
+      "url": "https://weltinfo.com/",
+      "name": "WeltInfo",
+      "publisher": { "@id": "https://weltinfo.com/#organization" },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://weltinfo.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Product",
+      "name": "GeForce RTX 4070 Gaming OC", 
+      "image": "https://placehold.co/300x300/2563eb/ffffff?text=RTX+4070",
+      "description": "Carte graphique haute performance pour le gaming disponible sur WeltInfo Algérie.",
+      "brand": {
+        "@type": "Brand",
+        "name": "NVIDIA"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://weltinfo.com/votre-page-produit",
+        "priceCurrency": "DZD",
+        "price": "95000",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition",
+        "priceValidUntil": "2026-12-31"
+      },
+      "seller": { "@id": "https://weltinfo.com/#organization" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
         {
-          "@type": "Organization",
-          "@id": "https://weltinfo.com/#organization",
-          "name": "WeltInfo",
-          "legalName": "WeltInfo E-Commerce",
-          "url": "https://weltinfo.com",
-          "logo": "https://weltinfo.com/logo.png",
-          "description": "WeltInfo est le site officiel de vente de matériel informatique en Algérie. Spécialiste en composants PC, GPU et Gaming.",
-          "sameAs": [
-            "https://www.facebook.com/weltinfo",
-            "https://www.instagram.com/weltinfo",
-            "https://www.youtube.com/@weltinfo"
-          ],
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Sidi Yahia, Hydra",
-            "addressLocality": "Alger",
-            "addressRegion": "Alger",
-            "postalCode": "16035",
-            "addressCountry": "DZ"
-          },
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+213-550-000-000",
-            "contactType": "customer service",
-            "areaServed": "DZ",
-            "availableLanguage": ["French", "Arabic"]
+          "@type": "Question",
+          "name": "Quels sont les modes de paiement acceptés par WeltInfo en Algérie ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WeltInfo accepte le paiement à la livraison (CCP et Barres), le virement bancaire via CCP ou Baridimob, ainsi que la carte bancaire pour une sécurité totale."
           }
         },
         {
-          "@type": "WebSite",
-          "@id": "https://weltinfo.com/#website",
-          "url": "https://weltinfo.com/",
-          "name": "WeltInfo",
-          "publisher": { "@id": "https://weltinfo.com/#organization" },
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://weltinfo.com/search?q={search_term_string}",
-            "query-input": "required name=search_term_string"
+          "@type": "Question",
+          "name": "Combien de temps prend la livraison vers les wilayas du Sud ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pour Alger et les wilayas du Centre, la livraison se fait en 24h à 48h. Pour les wilayas du Sud (Adrar, Tamanrasset, etc.), comptez 48h à 72h selon la disponibilité des transporteurs."
           }
         },
         {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Quels sont les modes de paiement acceptés par WeltInfo en Algérie ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "WeltInfo accepte le paiement à la livraison (CCP et Barres), le virement bancaire via CCP ou Baridimob, ainsi que la carte bancaire pour une sécurité totale."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Combien de temps prend la livraison vers les wilayas du Sud ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Pour Alger et les wilayas du Centre, la livraison se fait en 24h à 48h. Pour les wilayas du Sud (Adrar, Tamanrasset, etc.), comptez 48h à 72h selon la disponibilité des transporteurs."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Les produits vendus sur WeltInfo sont-ils garantis ?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Oui, absolument. Tous les composants (Carte graphique, Processeur, RAM) vendus par WeltInfo sont garantis par le fabricant. Nous disposons d'un centre de service à Alger pour gérer les SAV."
-              }
-            }
-          ]
+          "@type": "Question",
+          "name": "Les produits vendus sur WeltInfo sont-ils garantis ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui, absolument. Tous les composants (Carte graphique, Processeur, RAM) vendus par WeltInfo sont garantis par le fabricant. Nous disposons d'un centre de service à Alger pour gérer les SAV."
+          }
         }
       ]
     }
-    </script>
+  ]
+}
+</script>
 </head>
 <body>
 
