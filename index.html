@@ -1,22 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr-DZ">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- BRANDING SEO: Exact Match Brand Name First -->
-    <title>WeltInfo.com | Le Leader du Matériel Informatique en Algérie</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WeltInfo : Leader du Matériel Informatique en Algérie sur WeltInfo.com</title>
     <meta name="description" content="Site officiel de WeltInfo. Achat de composants PC, Carte Graphique, Processeur, RAM et Accessoires. Livraison 58 Wilayas. Guide d'expert montage PC.">
+    <meta name="keywords" content="magasin pc alger, carte graphique prix alger, processeur alger, ryzen 5 alger, rtx 3060 alger, carte mere asus alger, ram ddr4 alger, montage pc gamer alger, materiel informatique dz, vente materiel alger">
+    <meta name="robots" content="index, follow">
     <meta name="author" content="WeltInfo">
     <meta name="theme-color" content="#0f172a">
-    
-    <!-- Canonical Tag (Prevents Duplicate Content) -->
-    <link rel="canonical" href="https://weltinfo.com/" />
 
-    <!-- Favicon (Visual Branding) -->
+    <meta property="og:locale" content="fr_DZ">
+    <meta property="og:country-name" content="Algeria">
+    <meta name="geo.region" content="DZ">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weltinfo.com/">
+    <meta property="og:title" content="WeltInfo - Le Leader du Matériel Informatique en Algérie">
+    <meta property="og:description" content="Découvrez nos offres exclusives sur les composants PC. GPU NVIDIA, CPU AMD, Cartes Mères ASUS. Livraison rapide à Alger et Oran.">
+    <meta property="og:image" content="https://weltinfo.com/og-image.jpg">
+    <meta property="og:image:alt" content="Logo WeltInfo">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://weltinfo.com/">
+    <meta name="twitter:title" content="WeltInfo - Vente Composants PC Algérie">
+    <meta name="twitter:description" content="Achetez CPU, GPU, RAM au meilleur prix. Livraison 58 Wilayas.">
+    <meta name="twitter:image" content="https://weltinfo.com/og-image.jpg">
+
+    <link rel="canonical" href="https://weltinfo.com/">
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/1006/1006771.png">
-
-    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -41,19 +53,18 @@
 
         /* --- RESET & BASE --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+        html, body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-body);
             color: var(--text-main);
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
         }
 
         a { text-decoration: none; color: inherit; transition: 0.2s; }
         ul { list-style: none; }
-        img { max-width: 100%; display: block; }
-        
+        img { max-width: 100%; display: block; height: auto; }
+
         /* --- LAYOUT UTILS --- */
         .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
         .grid { display: grid; gap: 2rem; }
@@ -77,8 +88,8 @@
         }
 
         header {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(8px);
             border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
@@ -90,31 +101,47 @@
             align-items: center;
             justify-content: space-between;
             height: 80px;
+            position: relative;
+            gap: 1rem;
         }
 
         .brand-logo {
-            font-size: 2rem;
+            font-size: 1.7rem;
             font-weight: 900;
             color: var(--brand-color);
-            letter-spacing: -0.05em;
+            letter-spacing: -0.03em;
             display: flex;
             align-items: center;
-            gap: 1px;
+            gap: 0.01rem;
         }
-        
-        .brand-logo span { color: var(--brand-accent); }
 
-        .main-nav ul { display: flex; gap: 2rem; font-weight: 600; }
+        .brand-logo span { color: var(--brand-accent); font-weight: 900; }
+
+        /* Desktop Nav */
+        .main-nav ul { display: flex; gap: 2rem; font-weight: 600; align-items: center; }
         .main-nav a:hover { color: var(--brand-color); }
 
         .header-actions { display: flex; gap: 1rem; align-items: center; }
-        .btn-icon { 
-            width: 40px; height: 40px; border-radius: 50%; 
+
+        .btn-icon {
+            width: 40px; height: 40px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             border: 1px solid var(--border-color); cursor: pointer;
-            transition: 0.2s;
+            transition: 0.2s; background: white;
         }
         .btn-icon:hover { background: var(--brand-color); color: white; border-color: var(--brand-color); }
+
+        /* Mobile Toggle Button - HIDDEN ON DESKTOP by default */
+        .mobile-toggle {
+            display: none; /* shown on mobile via media query */
+            background: transparent;
+            border: none;
+            font-size: 1.35rem;
+            color: var(--text-main);
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+        }
 
         /* --- HERO SECTION --- */
         .hero {
@@ -123,24 +150,8 @@
             overflow: hidden;
             background: radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
         }
-
-        .hero-content {
-            max-width: 700px;
-        }
-
-        .hero-tag {
-            display: inline-block;
-            background: #dbeafe;
-            color: var(--brand-color);
-            padding: 6px 16px;
-            border-radius: 100px;
-            font-weight: 700;
-            font-size: 0.875rem;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
+        .hero-content { max-width: 700px; }
+        .hero-tag { display: inline-block; background: #dbeafe; color: var(--brand-color); padding: 6px 16px; border-radius: 100px; font-weight: 700; font-size: 0.875rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
         .btn-primary {
             background: var(--brand-color);
             color: white;
@@ -155,7 +166,6 @@
             box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.39);
         }
         .btn-primary:hover { transform: translateY(-2px); background: var(--brand-dark); }
-
         .hero-image {
             position: absolute;
             right: 0;
@@ -168,178 +178,137 @@
 
         /* --- CATEGORIES --- */
         .category-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-        
-        .cat-card {
-            background: var(--bg-card);
-            padding: 2rem;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-color);
-            text-align: center;
-            transition: 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-        
+        .cat-card { background: var(--bg-card); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); text-align: center; transition: 0.3s; position: relative; overflow: hidden; }
         .cat-card:hover { transform: translateY(-5px); border-color: var(--brand-color); }
         .cat-icon { font-size: 2.5rem; color: var(--brand-color); margin-bottom: 1.5rem; }
         .cat-card h3 { font-size: 1.25rem; }
-        
+
         /* --- PRODUCTS (Showcase) --- */
         .product-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-
-        .product-card {
-            background: var(--bg-card);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            transition: 0.3s;
-        }
-
+        .product-card { background: var(--bg-card); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-color); transition: 0.3s; }
         .product-card:hover { box-shadow: var(--shadow-lg); }
-
-        .product-img {
-            height: 250px;
-            background: #f1f5f9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        
-        .badge { 
-            position: absolute; top: 1rem; left: 1rem; 
-            background: var(--brand-accent); color: white; 
-            padding: 0.25rem 0.75rem; border-radius: 4px; 
-            font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-        }
-
+        .product-img { height: 250px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; position: relative; }
+        .badge { position: absolute; top: 1rem; left: 1rem; background: var(--brand-accent); color: white; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
         .product-info { padding: 1.5rem; }
         .brand-name { font-size: 0.875rem; color: var(--text-muted); text-transform: uppercase; }
         .product-title { font-size: 1.125rem; font-weight: 700; margin: 0.5rem 0; }
         .price { font-size: 1.5rem; font-weight: 800; color: var(--text-main); margin-top: auto; }
 
         /* --- EXPERT GUIDE SECTION (SEO Long Form) --- */
-        .content-block {
-            background: white;
-            padding: 4rem;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-sm);
-            margin-top: 2rem;
-        }
-
-        .expert-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .guide-list li {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-            border-left: 3px solid var(--brand-accent);
-        }
-
-        .highlight-box {
-            background: #f0f9ff;
-            border: 1px solid #bae6fd;
-            padding: 1.5rem;
-            border-radius: var(--radius-md);
-            margin-top: 2rem;
-        }
+        .content-block { background: white; padding: 4rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); margin-top: 2rem; }
+        .expert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+        .guide-list li { margin-bottom: 1.5rem; padding-left: 1.5rem; border-left: 3px solid var(--brand-accent); }
+        .highlight-box { background: #f0f9ff; border: 1px solid #bae6fd; padding: 1.5rem; border-radius: var(--radius-md); margin-top: 2rem; }
 
         /* --- BRAND AUTHORITY SECTION --- */
-        .brand-section {
-            background: var(--brand-dark);
-            color: white;
-            border-radius: var(--radius-lg);
-            padding: 4rem;
-            margin-top: 4rem;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .brand-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
+        .brand-section { background: var(--brand-dark); color: white; border-radius: var(--radius-lg); padding: 4rem; margin-top: 4rem; overflow: hidden; position: relative; }
+        .brand-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
         .brand-content h2 { color: white; margin-bottom: 1.5rem; }
         .brand-content p { color: #cbd5e1; margin-bottom: 2rem; }
-        
-        .stat-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
+        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
         .stat-number { font-size: 3rem; font-weight: 800; color: var(--brand-accent); line-height: 1; }
         .stat-label { font-size: 0.875rem; opacity: 0.8; }
 
         /* --- FAQ SECTION (SEO Optimized) --- */
         .faq-section { margin-top: 6rem; }
-        .faq-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-
-        .faq-item {
-            background: white;
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            overflow: hidden;
-        }
-
-        .faq-question {
-            padding: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: background 0.2s;
-        }
-
+        .faq-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+        .faq-item { background: white; border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden; }
+        .faq-question { padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 1.1rem; transition: background 0.2s; }
         .faq-question:hover { background: #f8fafc; }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            padding: 0 1.5rem;
-            color: var(--text-muted);
-        }
-
-        .faq-item.active .faq-answer {
-            padding: 1.5rem;
-            max-height: 200px; /* Adjust based on content */
-            border-top: 1px solid var(--border-color);
-        }
-        
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 1.5rem; color: var(--text-muted); }
+        .faq-item.active .faq-answer { padding: 1.5rem; max-height: 200px; border-top: 1px solid var(--border-color); }
         .faq-icon { transition: transform 0.3s; }
         .faq-item.active .faq-icon { transform: rotate(180deg); }
 
         /* --- FOOTER --- */
         footer { background: var(--bg-card); padding: 4rem 0 2rem; border-top: 1px solid var(--border-color); margin-top: 6rem; }
-        .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+        .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; display: grid; }
         .footer-logo { font-size: 1.5rem; font-weight: 800; color: var(--brand-color); display: block; margin-bottom: 1rem; }
         .footer-col h4 { font-size: 1rem; margin-bottom: 1.5rem; color: var(--text-main); }
         .footer-links li { margin-bottom: 0.75rem; }
         .footer-links a { color: var(--text-muted); }
         .footer-links a:hover { color: var(--brand-color); }
 
-        /* Responsive */
+        /* --- RESPONSIVE & MOBILE MENU FIX (LEFT ALIGNED) --- */
         @media (max-width: 992px) {
+            /* General adjustments for mobile */
+            .container { padding: 0 16px; }
+            h1 { font-size: 2.2rem; }
             .hero-image { display: none; }
             .hero { text-align: center; padding: 4rem 0; }
             .hero-content { margin: 0 auto; }
             .brand-grid { grid-template-columns: 1fr; }
-            .expert-grid { grid-template-columns: 1fr; }
+            .expert-grid { grid-template-columns: 1fr; gap: 2rem; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
+
+            /* 1. Show Hamburger Button and position it on the RIGHT */
+            .mobile-toggle {
+                display: block;
+                order: 4;               /* ensure it's on the right side in the flex order */
+                margin-left: 0;         /* reset any margin */
+            }
+
+            /* Use explicit flex orders so elements appear in the intended places on small screens */
+            .brand-logo { order: 1; }
+            .main-nav { order: 2; width: 100%; }
+            .header-actions { order: 5; margin-left: 8px; } /* keep actions after the menu toggle */
+
+            /* Make nav hidden by default (mobile menu off) */
+            .main-nav ul {
+                display: none;
+                flex-direction: column;
+                position: fixed; /* FIXED ensures it sticks to screen edge */
+                top: 80px; /* Header height */
+                left: 0; /* Aligns strictly to LEFT */
+                width: 100%; /* Full screen width */
+                background: white;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                padding: 1rem 0;
+                border-top: 1px solid var(--border-color);
+                z-index: 999;
+                max-height: 80vh; /* Prevent it from being too tall */
+                overflow-y: auto; /* Scroll inside menu if needed */
+                -webkit-overflow-scrolling: touch;
+            }
+
+            /* Show menu when active class is added */
+            .main-nav.active ul {
+                display: flex;
+                animation: slideDown 0.3s ease-out;
+            }
+
+            /* Link Styling for Touch */
+            .main-nav a {
+                padding: 1rem 1.25rem;
+                border-bottom: 1px solid #f1f5f9;
+                width: 100%;
+                display: block;
+            }
+
+            /* Reduce large paddings inside brand-section on mobile to prevent visual overflow */
+            .brand-section { padding: 2rem; border-radius: 12px; }
+            .brand-section .brand-content p { margin-bottom: 1rem; }
+            .brand-section .btn-primary { padding: 0.8rem 1.2rem; border-radius: 12px; }
+
+            /* Make stat-grid responsive on small screens */
+            .stat-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 1rem;
+            }
+
+            /* Reduce content-block padding on small screens to avoid overflow */
+            .content-block { padding: 2rem; }
+            .faq-question { font-size: 1rem; padding: 1rem; }
+            .faq-answer { font-size: 0.95rem; }
         }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* small polish: avoid any accidental horizontal overflow on very small devices */
+        html, body { overflow-x: hidden; }
     </style>
 
     <!-- ADVANCED JSON-LD SCHEMA -->
@@ -432,13 +401,13 @@
     <header>
         <div class="container nav-wrapper">
             <!-- Brand Logo -->
-            <a href="#" class="brand-logo">
-                <i class="fas fa-microchip"></i>
+            <a href="#" class="brand-logo" aria-label="WeltInfo">
+                <i class="fas fa-microchip" aria-hidden="true"></i>
                 WeltInfo<span>.com</span>
             </a>
 
             <!-- Navigation -->
-            <nav class="main-nav">
+            <nav class="main-nav" aria-label="Navigation principale">
                 <ul>
                     <li><a href="#">Composants</a></li>
                     <li><a href="#">Périphériques</a></li>
@@ -448,14 +417,21 @@
                 </ul>
             </nav>
 
+            <!-- MOBILE TOGGLE BUTTON -->
+            <!-- Note: It's placed after the nav in the DOM, but CSS controls order for mobile so it appears on the RIGHT -->
+            <button class="mobile-toggle" aria-label="Menu" aria-expanded="false" aria-controls="primary-navigation">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+
             <!-- Actions -->
-            <div class="header-actions">
-                <div class="btn-icon" aria-label="Rechercher"><i class="fas fa-search"></i></div>
-                <div class="btn-icon" aria-label="Compte"><i class="far fa-user"></i></div>
-                <div class="btn-icon" aria-label="Panier" style="position: relative;">
-                    <i class="fas fa-shopping-bag"></i>
+            <div class="header-actions" aria-hidden="false">
+                <button class="btn-icon" aria-label="Rechercher"><i class="fas fa-search" aria-hidden="true"></i></button>
+                
+                <button class="btn-icon" aria-label="Panier" style="position: relative;">
+                    <i class="fas fa-shopping-bag" aria-hidden="true"></i>
                     <span style="position: absolute; top: -2px; right: -2px; background: var(--brand-accent); color: white; font-size: 0.6rem; width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">0</span>
-                </div>
+                </button>
+                <button class="btn-icon" aria-label="Compte"><i class="far fa-user" aria-hidden="true"></i></button>
             </div>
         </div>
     </header>
@@ -470,11 +446,10 @@
                     <p>Découvrez le catalogue officiel WeltInfo 2025. Cartes graphiques RTX 40-Series, Processeurs Ryzen 7000 et les meilleurs composants pour votre montage PC en Algérie.</p>
                     <br>
                     <a href="#shop" class="btn-primary">
-                        Explorer le Catalogue <i class="fas fa-arrow-right"></i>
+                        Explorer le Catalogue <i class="fas fa-arrow-right" aria-hidden="true"></i>
                     </a>
                 </div>
-                <!-- Hero Image (PC Setup) -->
-                <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="WeltInfo Setup PC Gamer" class="hero-image">
+                <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="WeltInfo Setup PC Gamer" class="hero-image" loading="lazy">
             </div>
         </section>
 
@@ -488,22 +463,22 @@
 
                 <div class="grid category-grid">
                     <div class="cat-card">
-                        <i class="fas fa-microchip cat-icon"></i>
+                        <i class="fas fa-microchip cat-icon" aria-hidden="true"></i>
                         <h3>Processeurs</h3>
                         <p>Intel Core & AMD Ryzen</p>
                     </div>
                     <div class="cat-card">
-                        <i class="fas fa-tv cat-icon"></i>
+                        <i class="fas fa-tv cat-icon" aria-hidden="true"></i>
                         <h3>Cartes Graphiques</h3>
                         <p>NVIDIA GeForce & AMD Radeon</p>
                     </div>
-                                        <div class="cat-card">
-                        <i class="fas fa-memory cat-icon"></i>
+                    <div class="cat-card">
+                        <i class="fas fa-memory cat-icon" aria-hidden="true"></i>
                         <h3>Mémoire & Stockage</h3>
                         <p>RAM DDR4/DDR5 & NVMe SSD</p>
                     </div>
                     <div class="cat-card">
-                        <i class="fas fa-desktop cat-icon"></i>
+                        <i class="fas fa-desktop cat-icon" aria-hidden="true"></i>
                         <h3>Périphériques</h3>
                         <p>Claviers, Souris, Écrans</p>
                     </div>
@@ -584,7 +559,7 @@
                     <p style="margin-bottom: 2rem;">
                         Construire sa propre machine de jeu est devenu tendance en Algérie. Cependant, le marché regorge de contrefaçons et de composants incompatibles. Chez WeltInfo, nous vous offrons ce guide pour garantir un montage stable et performant.
                     </p>
-                    
+
                     <div class="expert-grid">
                         <div>
                             <h3 style="margin-bottom: 1.5rem; color: var(--brand-color);">1. Choisir le Cœur du Système</h3>
@@ -611,7 +586,7 @@
                     </div>
 
                     <div class="highlight-box">
-                        <h4 style="margin-bottom: 0.5rem; color: var(--brand-dark);"><i class="fas fa-lightbulb"></i> Conseil Budget & Paiement en Algérie</h4>
+                        <h4 style="margin-bottom: 0.5rem; color: var(--brand-dark);"><i class="fas fa-lightbulb" aria-hidden="true"></i> Conseil Budget & Paiement en Algérie</h4>
                         <p style="margin: 0; font-size: 1rem;">
                             Ne sacrifiez pas l'alimentation (PSU). Une mauvaise alimentation peut griller vos composants coûteux. Chez WeltInfo, nous facilitons l'achat grâce au paiement à la livraison via CCP ou Baridimob, et au virement bancaire sécurisé pour les commandes grosses.
                         </p>
@@ -636,7 +611,7 @@
                         </ul>
                         <a href="#" class="btn-primary" style="background: white; color: var(--brand-dark); box-shadow: none;">En savoir plus</a>
                     </div>
-                    <div class="stat-grid">
+                    <div class="stat-grid" aria-hidden="false">
                         <div>
                             <div class="stat-number">5k+</div>
                             <div class="stat-label">Clients Satisfaits</div>
@@ -667,7 +642,7 @@
                     <div class="faq-item">
                         <div class="faq-question">
                             Quels sont les modes de paiement acceptés par WeltInfo ?
-                            <i class="fas fa-chevron-down faq-icon"></i>
+                            <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
                         </div>
                         <div class="faq-answer">
                             WeltInfo accepte le paiement à la livraison (CCP et Barres) pour plus de sécurité. Nous acceptons aussi le virement bancaire via CCP ou Baridimob, ainsi que la carte bancaire (EDAHABIA/CIB) pour un traitement instantané de la commande.
@@ -678,7 +653,7 @@
                     <div class="faq-item">
                         <div class="faq-question">
                             Combien de temps prend la livraison vers le Sud ?
-                            <i class="fas fa-chevron-down faq-icon"></i>
+                            <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
                         </div>
                         <div class="faq-answer">
                             Pour Alger et les wilayas du Centre, la livraison est assurée en 24h à 48h. Pour les wilayas du Sud (Adrar, Tamanrasset, In Salah), le délai peut s'étendre jusqu'à 72h selon la disponibilité des transporteurs et les routes.
@@ -689,7 +664,7 @@
                     <div class="faq-item">
                         <div class="faq-question">
                             Les produits vendus sur WeltInfo sont-ils garantis ?
-                            <i class="fas fa-chevron-down faq-icon"></i>
+                            <i class="fas fa-chevron-down faq-icon" aria-hidden="true"></i>
                         </div>
                         <div class="faq-answer">
                             Absolument. Tous les composants (Carte graphique, Processeur, RAM) vendus par WeltInfo sont garantis par le fabricant. Nous disposons d'un centre de service à Alger pour gérer les retours et le SAV (Service Après-Vente).
@@ -709,9 +684,9 @@
                     <a href="#" class="footer-logo">WeltInfo</a>
                     <p>La destination de référence pour le matériel informatique en Algérie. Performance, Fiabilité, Service client à l'écoute.</p>
                     <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-                        <a href="#"><i class="fab fa-facebook fa-lg"></i></a>
-                        <a href="#"><i class="fab fa-instagram fa-lg"></i></a>
-                        <a href="#"><i class="fab fa-youtube fa-lg"></i></a>
+                        <a href="#"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fab fa-instagram fa-lg" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fab fa-youtube fa-lg" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="footer-col">
@@ -747,11 +722,12 @@
         </div>
     </footer>
 
-    <!-- Simple JS for FAQ -->
+    <!-- Simple JS for FAQ and Mobile Menu -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+
+            // --- FAQ FUNCTIONALITY ---
             const faqItems = document.querySelectorAll('.faq-item');
-            
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
                 question.addEventListener('click', () => {
@@ -762,6 +738,53 @@
                     // Toggle current
                     item.classList.toggle('active');
                 });
+            });
+
+            // --- MOBILE MENU FUNCTIONALITY ---
+            const mobileToggle = document.querySelector('.mobile-toggle');
+            const mainNav = document.querySelector('.main-nav');
+
+            if (mobileToggle && mainNav) {
+                mobileToggle.addEventListener('click', () => {
+                    // Toggle 'active' class on nav (controls the mobile menu)
+                    const isActive = mainNav.classList.toggle('active');
+                    mobileToggle.setAttribute('aria-expanded', String(isActive));
+
+                    // Change icon from bars to times (X)
+                    const icon = mobileToggle.querySelector('i');
+                    if (isActive) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+
+                // Close menu when clicking a link (UX improvement)
+                const navLinks = document.querySelectorAll('.main-nav a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mainNav.classList.remove('active');
+                        mobileToggle.setAttribute('aria-expanded', 'false');
+                        const icon = mobileToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    });
+                });
+            }
+
+            // Accessibility: close mobile menu on Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mainNav && mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    const icon = mobileToggle && mobileToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                    mobileToggle && mobileToggle.setAttribute('aria-expanded', 'false');
+                }
             });
         });
     </script>
