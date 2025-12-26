@@ -505,70 +505,81 @@
             </div>
         </section>
 
-        <!-- Featured Products (Showcase) -->
-        <section class="section-padding" style="background: white;">
-            <div class="container">
-                <div style="display: flex; justify-content: space-between; align-items: end; margin-bottom: 3rem;">
-                    <div>
-                        <h2>Nos Best-Sellers</h2>
-                        <p>Les produits les plus convoités du mois.</p>
-                    </div>
-                    <a href="#" style="font-weight: 700; color: var(--brand-color);">Voir tout &rarr;</a>
-                </div>
-
-                <div class="grid product-grid">
-                    <!-- Product 1 -->
-                    <article class="product-card" itemscope itemtype="https://schema.org/Product">
-                        <div class="product-img">
-                            <span class="badge">Top Vente</span>
-                            <img itemprop="image" src="https://placehold.co/300x300/2563eb/ffffff?text=RTX+4070" alt="Carte Graphique WeltInfo">
-                        </div>
-                        <div class="product-info">
-                            <span class="brand-name">NVIDIA</span>
-                            <h3 class="product-title" itemprop="name">GeForce RTX 4070 Gaming OC</h3>
-                            <div class="price" itemprop="price" content="95000">95,000 DA</div>
-                        </div>
-                    </article>
-
-                    <!-- Product 2 -->
-                    <article class="product-card" itemscope itemtype="https://schema.org/Product">
-                        <div class="product-img">
-                            <img itemprop="image" src="https://placehold.co/300x300/2563eb/ffffff?text=i5-13600K" alt="CPU Intel WeltInfo">
-                        </div>
-                        <div class="product-info">
-                            <span class="brand-name">INTEL</span>
-                            <h3 class="product-title" itemprop="name">Core i5-13600K (14 Cœurs)</h3>
-                            <div class="price" itemprop="price" content="54000">54,000 DA</div>
-                        </div>
-                    </article>
-
-                    <!-- Product 3 -->
-                    <article class="product-card" itemscope itemtype="https://schema.org/Product">
-                        <div class="product-img">
-                            <span class="badge" style="background: var(--brand-color);">Nouveau</span>
-                            <img itemprop="image" src="https://placehold.co/300x300/2563eb/ffffff?text=Ryzen+7+7800X3D" alt="CPU AMD WeltInfo">
-                        </div>
-                        <div class="product-info">
-                            <span class="brand-name">AMD</span>
-                            <h3 class="product-title" itemprop="name">Ryzen 7 7800X3D Gaming</h3>
-                            <div class="price" itemprop="price" content="89000">89,000 DA</div>
-                        </div>
-                    </article>
-
-                    <!-- Product 4 -->
-                    <article class="product-card" itemscope itemtype="https://schema.org/Product">
-                        <div class="product-img">
-                            <img itemprop="image" src="https://placehold.co/300x300/2563eb/ffffff?text=Z790+Wifi" alt="Carte Mere WeltInfo">
-                        </div>
-                        <div class="product-info">
-                            <span class="brand-name">MSI</span>
-                            <h3 class="product-title" itemprop="name">Mag Z790 TOMAHAWK WIFI</h3>
-                            <div class="price" itemprop="price" content="42000">42,000 DA</div>
-                        </div>
-                    </article>
-                </div>
+       <section class="section-padding" style="background: white;">
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: end; margin-bottom: 3rem;">
+            <div>
+                <h2>Nos Best-Sellers</h2>
+                <p>Les produits les plus convoités du mois.</p>
             </div>
-        </section>
+            <a href="#" style="font-weight: 700; color: var(--brand-color);">Voir tout &rarr;</a>
+        </div>
+
+        <div class="grid product-grid">
+            <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                <div class="product-img">
+                    <span class="badge">Top Vente</span>
+                    <img itemprop="image" src="https://placehold.co/300x300/2563eb/ffffff?text=RTX+4070" alt="Carte Graphique WeltInfo">
+                </div>
+                <div class="product-info">
+                    <span class="brand-name">NVIDIA</span>
+                    <h3 class="product-title" itemprop="name">GeForce RTX 4070 Gaming OC</h3>
+                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <meta itemprop="priceCurrency" content="DZD">
+                        <meta itemprop="availability" content="https://schema.org/InStock">
+                        <div class="price"><span itemprop="price">95000</span> DA</div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                <div class="product-img">
+                    <img itemprop="image" src="https://placehold.co/300x300/2563eb/ffffff?text=i5-13600K" alt="CPU Intel WeltInfo">
+                </div>
+                <div class="product-info">
+                    <span class="brand-name">INTEL</span>
+                    <h3 class="product-title" itemprop="name">Core i5-13600K (14 Cœurs)</h3>
+                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <meta itemprop="priceCurrency" content="DZD">
+                        <meta itemprop="availability" content="https://schema.org/InStock">
+                        <div class="price"><span itemprop="price">54000</span> DA</div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                <div class="product-img">
+                    <span class="badge" style="background: var(--brand-color);">Nouveau</span>
+                    <img itemprop="image" src="https://placehold.co/300x300/2563eb/ffffff?text=Ryzen+7+7800X3D" alt="CPU AMD WeltInfo">
+                </div>
+                <div class="product-info">
+                    <span class="brand-name">AMD</span>
+                    <h3 class="product-title" itemprop="name">Ryzen 7 7800X3D Gaming</h3>
+                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <meta itemprop="priceCurrency" content="DZD">
+                        <meta itemprop="availability" content="https://schema.org/InStock">
+                        <div class="price"><span itemprop="price">89000</span> DA</div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card" itemscope itemtype="https://schema.org/Product">
+                <div class="product-img">
+                    <img itemprop="image" src="https://placehold.co/300x300/2563eb/ffffff?text=Z790+Wifi" alt="Carte Mere WeltInfo">
+                </div>
+                <div class="product-info">
+                    <span class="brand-name">MSI</span>
+                    <h3 class="product-title" itemprop="name">Mag Z790 TOMAHAWK WIFI</h3>
+                    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                        <meta itemprop="priceCurrency" content="DZD">
+                        <meta itemprop="availability" content="https://schema.org/InStock">
+                        <div class="price"><span itemprop="price">42000</span> DA</div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
 
         <!-- EXPERT GUIDE SECTION (Long Form SEO) -->
         <section class="section-padding">
